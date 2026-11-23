@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ButtonLink, Container, Eyebrow } from "@/components/brand";
 import { EnquiryForm } from "@/components/enquiry-form";
-import { ExampleWork } from "@/components/example-work";
+import { ScreenSlider } from "@/components/screen-slider";
 import { FaqList } from "@/components/faq-list";
 import { HeroScene } from "@/components/hero-scene";
 import { ProcessPath } from "@/components/process-path";
@@ -41,7 +41,7 @@ export default function HomePage() {
 
       <ServicesAtlas />
       <SolutionsLab />
-      <ExampleWork />
+      <ScreenSlider />
       <ProcessPath />
 
       <section id="about" className="scroll-mt-28 bg-lavender/45 py-20 sm:py-28">

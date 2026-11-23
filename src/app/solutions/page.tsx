@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ButtonLink, Container, Eyebrow } from "@/components/brand";
-import { ExampleWork } from "@/components/example-work";
+import { ScreenSlider } from "@/components/screen-slider";
 import { SolutionsLab } from "@/components/solutions-lab";
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function SolutionsPage() {
             Practical examples, <span className="italic text-emerald">kept honest.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/80">
-            Explore sample journeys for enquiries, booking, automation, and connected operations. Then look at interface concepts for the kinds of products a project can become.
+            Explore sample journeys for enquiries, booking, automation, and connected operations. Then move through the mobile and website screens.
           </p>
           <ButtonLink href="/contact" className="mt-8">
             Discuss Your Project
@@ -28,7 +28,7 @@ export default function SolutionsPage() {
         </Container>
       </section>
       <SolutionsLab />
-      <ExampleWork />
+      <ScreenSlider id="solution-screens" />
     </>
   );
 }

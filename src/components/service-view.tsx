@@ -1,6 +1,7 @@
 import { FaqList } from "@/components/faq-list";
 import { ButtonLink, Container, Eyebrow } from "@/components/brand";
 import { ServiceIcon } from "@/components/icons";
+import { ScreenSlider } from "@/components/screen-slider";
 import { accents, groups, type Service } from "@/data/services";
 
 export function ServiceView({ service }: { service: Service }) {
@@ -40,6 +41,17 @@ export function ServiceView({ service }: { service: Service }) {
           </aside>
         </Container>
       </header>
+
+      {service.slug === "android-ios-applications" ? (
+        <ScreenSlider
+          group="mobile"
+          id="mobile-screens"
+          eyebrow="Android & iOS"
+          title="The apps,"
+          italic="on the phone."
+          lede="Shopping and rental screens, shown as phone layouts."
+        />
+      ) : null}
 
       <Container className="grid gap-16 py-16 lg:grid-cols-[1fr_1fr]">
         <section>

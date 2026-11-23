@@ -175,6 +175,11 @@ body::before {
   animation: dots 1s infinite;
 }
 
+@keyframes slide-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 
