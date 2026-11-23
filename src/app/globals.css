@@ -81,6 +81,16 @@ body::before {
   line-height: 0.92;
 }
 
+.hero-photo {
+  background-color: #f7f8f2;
+  background-image:
+    linear-gradient(100deg, rgba(247, 248, 242, 0.88) 0%, rgba(247, 248, 242, 0.62) 34%, rgba(247, 248, 242, 0.16) 62%, rgba(247, 248, 242, 0.28) 100%),
+    url("/hero/studio.jpg");
+  background-position: center, center right;
+  background-repeat: no-repeat;
+  background-size: cover, cover;
+}
+
 .stage-wash {
   background:
     radial-gradient(720px 360px at 100% -6%, rgba(201, 190, 245, 0.95), transparent 62%),

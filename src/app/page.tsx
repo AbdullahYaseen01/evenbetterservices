@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <section className="stage-wash">
+      <section className="hero-photo">
         <Container className="grid items-center gap-12 py-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.95fr)] lg:py-20">
           <div>
             <p className="rise text-[0.78rem] font-semibold tracking-[0.16em] text-emerald uppercase">{brand.eyebrow}</p>
