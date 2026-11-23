@@ -1,69 +1,95 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { ButtonLink, Container, Eyebrow } from "@/components/brand";
+import { EnquiryForm } from "@/components/enquiry-form";
+import { ExampleWork } from "@/components/example-work";
+import { FaqList } from "@/components/faq-list";
+import { HeroScene } from "@/components/hero-scene";
+import { ProcessPath } from "@/components/process-path";
+import { ServicesAtlas } from "@/components/services-atlas";
+import { SolutionsLab } from "@/components/solutions-lab";
+import { WhyStudio } from "@/components/why-studio";
+import { brand } from "@/lib/site";
 
-export default function Home() {
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <section className="stage-wash">
+        <Container className="grid items-center gap-12 py-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.95fr)] lg:py-20">
+          <div>
+            <p className="rise text-[0.78rem] font-semibold tracking-[0.16em] text-emerald uppercase">{brand.eyebrow}</p>
+            <h1 className="display rise d1 mt-5 text-[clamp(3.15rem,6.2vw,5.7rem)] text-forest">
+              <span className="block">Build smarter.</span>
+              <span className="block text-emerald italic">Automate better.</span>
+              <span className="block">Grow with confidence.</span>
+            </h1>
+            <p className="rise d2 mt-6 max-w-xl text-lg leading-8 text-ink/80">{brand.description}</p>
+            <div className="rise d3 mt-8 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/contact">Discuss Your Project</ButtonLink>
+              <ButtonLink href="/#services" variant="secondary">
+                Explore Our Services
+              </ButtonLink>
+            </div>
+            <p className="rise d4 mt-5 text-sm text-ink/60">From your first idea to launch and ongoing improvement.</p>
+          </div>
+          <HeroScene />
+        </Container>
+      </section>
+
+      <ServicesAtlas />
+      <SolutionsLab />
+      <ExampleWork />
+      <ProcessPath />
+
+      <section id="about" className="scroll-mt-28 bg-lavender/45 py-20 sm:py-28">
+        <Container className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <Eyebrow>About</Eyebrow>
+            <h2 className="display mt-4 text-[clamp(2.6rem,5vw,4.5rem)] text-forest">
+              Useful AI. Thoughtful software. <span className="italic">Clear collaboration.</span>
+            </h2>
+            <p className="mt-5 max-w-xl text-lg leading-8 text-ink/80">
+              EvenBetterServices helps founders, startups, SMEs, and product teams turn operational friction into software people can use. We explain the business outcome before the technical detail.
+            </p>
+            <ButtonLink href="/about" className="mt-8" variant="forest">
+              About the studio
+            </ButtonLink>
+          </div>
+          <div className="grid gap-3">
+            {[
+              ["Useful AI", "Agents and automation for questions, bookings, and the steps a team repeats."],
+              ["Thoughtful software", "Products, portals, and systems designed around the work, not a feature list."],
+              ["Clear collaboration", "Scope, milestones, and handover are agreed before they are assumed."],
+            ].map(([title, detail]) => (
+              <article key={title} className="rounded-[24px] bg-ivory p-5">
+                <h3 className="text-xl font-semibold text-forest">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-ink/75">{detail}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <WhyStudio />
+      <FaqList />
+
+      <section id="contact" className="forest-wash dark-ui scroll-mt-28">
+        <Container className="grid gap-10 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:py-28">
+          <div>
+            <p className="text-[0.78rem] font-semibold tracking-[0.16em] text-lime uppercase">Contact</p>
+            <h2 className="display mt-4 text-[clamp(2.8rem,5vw,4.8rem)] text-ivory">
+              Let’s make your next idea <span className="text-lime italic">even better.</span>
+            </h2>
+            <p className="mt-5 max-w-md text-lg leading-8 text-ivory/80">
+              Tell us what you want to build, improve, or automate.
+            </p>
+          </div>
+          <EnquiryForm />
+        </Container>
+      </section>
+    </>
   );
 }
