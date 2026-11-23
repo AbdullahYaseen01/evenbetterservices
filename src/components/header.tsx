@@ -122,8 +122,8 @@ export function Header() {
       onMouseLeave={() => setServicesOpen(false)}
       className={`sticky top-0 z-50 transition-colors ${
         scrolled || servicesOpen || mobileOpen
-          ? "border-b border-ink/10 bg-ivory shadow-[0_14px_30px_-24px_rgba(18,60,53,0.7)]"
-          : "border-b border-transparent bg-ivory"
+          ? "header-wash border-b border-ink/10 shadow-[0_14px_30px_-24px_rgba(18,60,53,0.7)]"
+          : "header-wash border-b border-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1180px] items-center gap-3 px-5 sm:h-[76px] sm:px-8">
@@ -202,7 +202,7 @@ export function Header() {
       {servicesOpen ? (
         <div
           id={megaId}
-          className="menu-in absolute inset-x-0 top-full hidden border-t border-ink/10 bg-ivory shadow-[0_30px_40px_-34px_rgba(18,60,53,0.8)] lg:block"
+          className="menu-in header-wash absolute inset-x-0 top-full hidden border-t border-ink/10 shadow-[0_30px_40px_-34px_rgba(18,60,53,0.8)] lg:block"
         >
           <div className="mx-auto grid max-w-[1180px] grid-cols-4 gap-8 px-8 py-8">
             {groupOrder.map((groupId) => {
@@ -247,7 +247,7 @@ export function Header() {
         id={menuId}
         ref={menuRef}
         hidden={!mobileOpen}
-        className="dark-ui fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-ivory lg:hidden"
+        className="dark-ui wash-lavender fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto lg:hidden"
         role="dialog"
         aria-modal="true"
         aria-label="Menu"

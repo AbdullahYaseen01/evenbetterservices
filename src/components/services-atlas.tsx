@@ -10,7 +10,7 @@ export function ServicesAtlas({ intro = true }: { intro?: boolean }) {
   const design = servicesInGroup("design")[0];
 
   return (
-    <section id="services" className="scroll-mt-28 py-20 sm:py-28">
+    <section id="services" className="wash-sky scroll-mt-28 py-20 sm:py-28">
       <Container>
         {intro ? (
         <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">

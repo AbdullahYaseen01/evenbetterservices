@@ -96,7 +96,7 @@ export function SolutionsLab() {
   }
 
   return (
-    <section id="solutions" className="scroll-mt-28 bg-ivory-deep py-20 sm:py-28">
+    <section id="solutions" className="wash-peach scroll-mt-28 py-20 sm:py-28">
       <Container>
         <div className="max-w-3xl">
           <Eyebrow>Solutions</Eyebrow>

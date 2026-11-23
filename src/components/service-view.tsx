@@ -53,6 +53,7 @@ export function ServiceView({ service }: { service: Service }) {
         />
       ) : null}
 
+      <div className="wash-peach">
       <Container className="grid gap-16 py-16 lg:grid-cols-[1fr_1fr]">
         <section>
           <h2 className="display text-4xl text-forest">Problems it can address</h2>
@@ -76,8 +77,9 @@ export function ServiceView({ service }: { service: Service }) {
           </ol>
         </section>
       </Container>
+      </div>
 
-      <section className="bg-white py-16">
+      <section className="wash-sky py-16">
         <Container>
           <h2 className="display text-4xl text-forest">Example use cases</h2>
           <div className="mt-8 grid gap-4 lg:grid-cols-3">
@@ -91,7 +93,8 @@ export function ServiceView({ service }: { service: Service }) {
         </Container>
       </section>
 
-      <Container className="py-16">
+      <section className="wash-lime py-16">
+      <Container>
         <h2 className="display text-4xl text-forest">Delivery approach</h2>
         <ol className="mt-8 grid gap-4 md:grid-cols-2">
           {service.delivery.map((step, index) => (
@@ -103,8 +106,9 @@ export function ServiceView({ service }: { service: Service }) {
           ))}
         </ol>
       </Container>
+      </section>
 
-      <section className="bg-ivory-deep py-16">
+      <section className="wash-lavender py-16">
         <Container className="max-w-3xl">
           <h2 className="display text-4xl text-forest">Questions about this service</h2>
           <div className="mt-6">

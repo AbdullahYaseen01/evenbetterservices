@@ -3,7 +3,7 @@ import { processSteps } from "@/data/content";
 
 export function ProcessPath() {
   return (
-    <section id="process" className="scroll-mt-28 py-20 sm:py-28">
+    <section id="process" className="wash-lime scroll-mt-28 py-20 sm:py-28">
       <Container>
         <Eyebrow>Delivery</Eyebrow>
         <h2 className="display mt-4 max-w-3xl text-[clamp(2.6rem,5vw,4.6rem)] text-forest">

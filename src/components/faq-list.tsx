@@ -63,7 +63,7 @@ export function FaqList({
   if (!contained) return <section id="faq" className="scroll-mt-28">{body}</section>;
 
   return (
-    <section id="faq" className="scroll-mt-28 py-20 sm:py-24">
+    <section id="faq" className="wash-peach scroll-mt-28 py-20 sm:py-24">
       <Container>{body}</Container>
     </section>
   );

@@ -44,7 +44,7 @@ export default function HomePage() {
       <ScreenSlider />
       <ProcessPath />
 
-      <section id="about" className="scroll-mt-28 bg-lavender/45 py-20 sm:py-28">
+      <section id="about" className="wash-lavender scroll-mt-28 py-20 sm:py-28">
         <Container className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <Eyebrow>About</Eyebrow>

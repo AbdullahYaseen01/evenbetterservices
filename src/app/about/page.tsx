@@ -24,7 +24,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="wash-sky py-16 sm:py-24">
         <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <h2 className="display text-4xl text-forest sm:text-5xl">Who the work is for</h2>
@@ -43,7 +43,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-peach/40 py-16">
+      <section className="wash-peach py-16">
         <Container className="grid gap-4 md:grid-cols-3">
           {[
             ["Start from the workflow", "The first question is what people do today, and where that work slows down."],

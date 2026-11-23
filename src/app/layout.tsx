@@ -57,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
   return (
     <html lang="en" className={`${fraunces.variable} ${outfit.variable} h-full scroll-smooth antialiased`}>
-      <body className="min-h-full overflow-x-clip bg-ivory font-sans text-ink">
+      <body className="min-h-full overflow-x-clip font-sans text-ink">
         <a className="skip-link" href="#content">
           Skip to content
         </a>

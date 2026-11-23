@@ -50,7 +50,7 @@ export function ScreenSlider({
   return (
     <section
       id={id}
-      className="scroll-mt-28 py-20 sm:py-28"
+      className="wash-lavender scroll-mt-28 py-20 sm:py-28"
       aria-roledescription="carousel"
       aria-label={eyebrow}
       onMouseEnter={() => setHeld(true)}
