@@ -9,8 +9,9 @@ export function ServiceView({ service }: { service: Service }) {
 
   return (
     <article className="service-night dark-ui">
-      <header className="border-b border-white/10">
-        <Container className="grid gap-10 py-16 lg:grid-cols-[1.3fr_0.7fr] lg:py-24">
+      <header>
+        <Container className="py-10 lg:py-16">
+          <div className="night-panel grid gap-10 p-6 sm:p-10 lg:grid-cols-[1.3fr_0.7fr] lg:p-12">
           <div>
             <Eyebrow warm>{group.title}</Eyebrow>
             <p className="mt-4 font-display text-2xl text-ember italic">{service.number}</p>
@@ -23,7 +24,7 @@ export function ServiceView({ service }: { service: Service }) {
               </ButtonLink>
             </div>
           </div>
-          <aside className="rounded-[28px] border border-white/10 bg-white/6 p-6 shadow-[0_24px_50px_-32px_rgba(0,0,0,0.65)] lg:self-end">
+          <aside className="night-card rounded-[28px] p-6 lg:self-end">
             <span
               className="flex h-14 w-14 items-center justify-center rounded-2xl"
               style={{ background: accents[service.accent], color: service.accent === "emerald" || service.accent === "forest" ? "#F7F8F2" : "#172521" }}
@@ -41,12 +42,13 @@ export function ServiceView({ service }: { service: Service }) {
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {service.cardPoints.map((point) => (
-                <li key={point} className="rounded-full border border-white/10 bg-white/8 px-3 py-1 text-xs font-semibold text-cream">
+                <li key={point} className="rounded-full border border-[#e4d2b0]/25 bg-black/25 px-3 py-1 text-xs font-semibold text-cream">
                   {point}
                 </li>
               ))}
             </ul>
           </aside>
+          </div>
         </Container>
       </header>
 
@@ -62,12 +64,12 @@ export function ServiceView({ service }: { service: Service }) {
         />
       ) : null}
 
-      <Container className="grid gap-16 border-b border-white/10 py-16 lg:grid-cols-[1fr_1fr]">
+      <Container className="grid gap-16 border-b border-[#e4d2b0]/10 py-16 lg:grid-cols-[1fr_1fr]">
         <section>
           <h2 className="display text-4xl text-cream">Problems it can address</h2>
           <ul className="mt-6 space-y-3">
             {service.problems.map((problem) => (
-              <li key={problem} className="rounded-[20px] border border-white/10 bg-white/6 px-4 py-4 text-cream/80">
+              <li key={problem} className="night-card rounded-[20px] px-4 py-4 text-cream/80">
                 {problem}
               </li>
             ))}
@@ -86,12 +88,12 @@ export function ServiceView({ service }: { service: Service }) {
         </section>
       </Container>
 
-      <section className="border-b border-white/10 py-16">
+      <section className="border-b border-[#e4d2b0]/10 py-16">
         <Container>
           <h2 className="display text-4xl text-cream">Example use cases</h2>
           <div className="mt-8 grid gap-4 lg:grid-cols-3">
             {service.useCases.map((useCase) => (
-              <article key={useCase.title} className="rounded-[24px] border border-white/10 bg-white/6 p-5">
+              <article key={useCase.title} className="night-card rounded-[24px] p-5">
                 <h3 className="text-xl font-semibold text-cream">{useCase.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-cream/70">{useCase.detail}</p>
               </article>
@@ -100,12 +102,12 @@ export function ServiceView({ service }: { service: Service }) {
         </Container>
       </section>
 
-      <section className="border-b border-white/10 py-16">
+      <section className="border-b border-[#e4d2b0]/10 py-16">
         <Container>
           <h2 className="display text-4xl text-cream">Delivery approach</h2>
           <ol className="mt-8 grid gap-4 md:grid-cols-2">
             {service.delivery.map((step, index) => (
-              <li key={step.title} className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+              <li key={step.title} className="night-card rounded-[24px] p-5">
                 <span className="font-display text-3xl text-ember italic">0{index + 1}</span>
                 <h3 className="mt-3 text-xl font-semibold text-cream">{step.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-cream/70">{step.detail}</p>
@@ -124,7 +126,7 @@ export function ServiceView({ service }: { service: Service }) {
         </Container>
       </section>
 
-      <section className="border-t border-white/10">
+      <section className="service-close border-t border-[#e4d2b0]/15">
         <Container className="flex flex-col items-start gap-6 py-16 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="display text-4xl text-cream sm:text-5xl">

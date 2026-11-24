@@ -114,11 +114,36 @@ body::before {
 
 .service-night {
   background:
-    radial-gradient(900px 280px at 50% 108%, rgba(255, 122, 24, 0.34), transparent 58%),
-    radial-gradient(520px 260px at 100% 0%, rgba(228, 210, 176, 0.08), transparent 55%),
-    radial-gradient(420px 240px at 0% 30%, rgba(90, 42, 16, 0.35), transparent 55%),
-    #070708;
+    radial-gradient(820px 380px at 88% -8%, rgba(255, 122, 24, 0.28), transparent 58%),
+    radial-gradient(640px 360px at -8% 18%, rgba(120, 58, 24, 0.45), transparent 60%),
+    radial-gradient(900px 320px at 50% 100%, rgba(255, 122, 24, 0.22), transparent 55%),
+    #100c09;
   color: #f6f3ee;
+}
+
+.night-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  border: 1px solid rgba(228, 210, 176, 0.2);
+  background:
+    radial-gradient(520px 180px at 50% 125%, rgba(255, 122, 24, 0.48), transparent 62%),
+    linear-gradient(180deg, #241910 0%, #140f0c 70%);
+  box-shadow: 0 40px 80px -48px rgba(0, 0, 0, 0.85);
+}
+
+.night-card {
+  border: 1px solid rgba(228, 210, 176, 0.16);
+  background:
+    linear-gradient(180deg, rgba(255, 196, 140, 0.07), transparent 42%),
+    #1c1511;
+  box-shadow: 0 18px 40px -28px rgba(0, 0, 0, 0.8);
+}
+
+.service-close {
+  background:
+    radial-gradient(680px 220px at 50% 130%, rgba(255, 122, 24, 0.5), transparent 62%),
+    #160f0c;
 }
 
 .header-wash {
