@@ -10,10 +10,12 @@ export function FaqList({
   contained = true,
   heading = true,
   items,
+  tone = "light",
 }: {
   contained?: boolean;
   heading?: boolean;
   items?: readonly FaqItem[];
+  tone?: "light" | "dark";
 }) {
   const [open, setOpen] = useState<number>(0);
   const baseId = useId();
@@ -28,7 +30,7 @@ export function FaqList({
           </h2>
         </>
       ) : null}
-      <div className={`${heading ? "mt-8" : ""} divide-y divide-ink/10 border-y border-ink/10`}>
+      <div className={`${heading ? "mt-8" : ""} divide-y border-y ${tone === "dark" ? "divide-white/12 border-white/12" : "divide-ink/10 border-ink/10"}`}>
         {list.map((faq, index) => {
           const expanded = open === index;
           const panelId = `${baseId}-panel-${index}`;
@@ -39,19 +41,19 @@ export function FaqList({
                 <button
                   id={buttonId}
                   type="button"
-                  className="flex min-h-16 w-full items-center justify-between gap-4 py-4 text-left text-lg font-semibold text-forest"
+                  className={`flex min-h-16 w-full items-center justify-between gap-4 py-4 text-left text-lg font-semibold ${tone === "dark" ? "text-ivory" : "text-forest"}`}
                   aria-expanded={expanded}
                   aria-controls={panelId}
                   onClick={() => setOpen(expanded ? -1 : index)}
                 >
                   {faq.question}
-                  <span aria-hidden="true" className="font-display text-2xl text-emerald italic">
+                  <span aria-hidden="true" className={`font-display text-2xl italic ${tone === "dark" ? "text-lime" : "text-emerald"}`}>
                     {expanded ? "–" : "+"}
                   </span>
                 </button>
               </h3>
               <div id={panelId} role="region" aria-labelledby={buttonId} hidden={!expanded}>
-                <p className="max-w-3xl pb-5 text-base leading-7 text-ink/75">{faq.answer}</p>
+                <p className={`max-w-3xl pb-5 text-base leading-7 ${tone === "dark" ? "text-ivory/75" : "text-ink/75"}`}>{faq.answer}</p>
               </div>
             </div>
           );

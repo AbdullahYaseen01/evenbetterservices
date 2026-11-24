@@ -109,6 +109,16 @@ body::before {
     #123c35;
 }
 
+.service-night {
+  background:
+    radial-gradient(720px 360px at 100% -8%, rgba(216, 243, 106, 0.22), transparent 58%),
+    radial-gradient(620px 340px at -8% 8%, rgba(201, 190, 245, 0.24), transparent 56%),
+    radial-gradient(520px 300px at 78% 72%, rgba(173, 217, 243, 0.14), transparent 55%),
+    radial-gradient(460px 260px at 6% 100%, rgba(255, 190, 167, 0.12), transparent 55%),
+    #0b2420;
+  color: #f7f8f2;
+}
+
 .header-wash {
   background: linear-gradient(100deg, #f3f8d4 0%, #f7f8f2 28%, #efe6ff 68%, #ffe4d6 100%);
 }

@@ -16,6 +16,7 @@ export function ScreenSlider({
   italic = "screens.",
   lede = "Mobile apps and websites, one frame at a time.",
   embedded = false,
+  tone = "light",
 }: {
   group?: ScreenSlide["group"];
   id?: string;
@@ -24,6 +25,7 @@ export function ScreenSlider({
   italic?: string;
   lede?: string;
   embedded?: boolean;
+  tone?: "light" | "dark";
 }) {
   const slides = group ? screenSlides.filter((slide) => slide.group === group) : screenSlides;
   const reduce = usePrefersReducedMotion();
@@ -52,7 +54,7 @@ export function ScreenSlider({
   return (
     <section
       id={id}
-      className={embedded ? "min-w-0" : "wash-lavender scroll-mt-28 py-20 sm:py-28"}
+      className={embedded ? "min-w-0" : tone === "dark" ? "scroll-mt-28 py-20 sm:py-28" : "wash-lavender scroll-mt-28 py-20 sm:py-28"}
       aria-roledescription="carousel"
       aria-label={eyebrow}
       onMouseEnter={() => setHeld(true)}
@@ -95,11 +97,11 @@ export function ScreenSlider({
         ) : (
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <Eyebrow>{eyebrow}</Eyebrow>
-            <h2 className="display mt-4 text-[clamp(2.5rem,5vw,4.5rem)] text-forest">
-              {title} <span className="italic text-emerald">{italic}</span>
+            <Eyebrow light={tone === "dark"}>{eyebrow}</Eyebrow>
+            <h2 className={`display mt-4 text-[clamp(2.5rem,5vw,4.5rem)] ${tone === "dark" ? "text-ivory" : "text-forest"}`}>
+              {title} <span className={`italic ${tone === "dark" ? "text-lime" : "text-emerald"}`}>{italic}</span>
             </h2>
-            <p className="mt-4 max-w-xl text-lg leading-8 text-ink/75">{lede}</p>
+            <p className={`mt-4 max-w-xl text-lg leading-8 ${tone === "dark" ? "text-ivory/75" : "text-ink/75"}`}>{lede}</p>
           </div>
           <div className="flex items-center gap-2">
             <p className="mr-2 font-display text-2xl text-emerald italic" aria-hidden="true">
@@ -174,7 +176,7 @@ export function ScreenSlider({
         <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div aria-live="polite">
             <p className="text-[0.72rem] font-semibold tracking-[0.16em] text-emerald uppercase">{current.kind}</p>
-            <h3 className="mt-1 text-2xl font-semibold text-forest">{current.title}</h3>
+            <h3 className={`mt-1 text-2xl font-semibold ${tone === "dark" ? "text-ivory" : "text-forest"}`}>{current.title}</h3>
           </div>
           <div className="flex gap-2 overflow-x-auto pb-1" role="group" aria-label="Choose a screen">
             {slides.map((slide, slideIndex) => {
