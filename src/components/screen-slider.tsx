@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useId, useState, type ReactNode } from "react";
-import { Container, Eyebrow } from "@/components/brand";
+import { Eyebrow } from "@/components/brand";
 import { screenSlides, type ScreenSlide } from "@/data/screens";
 import { usePrefersReducedMotion } from "@/lib/motion";
 
@@ -15,6 +15,7 @@ export function ScreenSlider({
   title = "Move through the",
   italic = "screens.",
   lede = "Mobile apps and websites, one frame at a time.",
+  embedded = false,
 }: {
   group?: ScreenSlide["group"];
   id?: string;
@@ -22,6 +23,7 @@ export function ScreenSlider({
   title?: string;
   italic?: string;
   lede?: string;
+  embedded?: boolean;
 }) {
   const slides = group ? screenSlides.filter((slide) => slide.group === group) : screenSlides;
   const reduce = usePrefersReducedMotion();
@@ -50,7 +52,7 @@ export function ScreenSlider({
   return (
     <section
       id={id}
-      className="wash-lavender scroll-mt-28 py-20 sm:py-28"
+      className={embedded ? "min-w-0" : "wash-lavender scroll-mt-28 py-20 sm:py-28"}
       aria-roledescription="carousel"
       aria-label={eyebrow}
       onMouseEnter={() => setHeld(true)}
@@ -70,7 +72,27 @@ export function ScreenSlider({
         }
       }}
     >
-      <Container>
+      <div className={embedded ? "" : "mx-auto w-full max-w-[1180px] px-5 sm:px-8"}>
+        {embedded ? (
+        <div className="mb-3 flex items-center justify-between gap-3 rounded-full bg-white/85 px-3 py-1.5">
+          <p className="text-[0.72rem] font-semibold tracking-[0.16em] text-emerald uppercase">{eyebrow}</p>
+          <div className="flex items-center gap-2">
+            <p className="mr-1 font-display text-xl text-emerald italic" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
+              <span className="text-forest/35"> / {String(count).padStart(2, "0")}</span>
+            </p>
+            <Control label="Previous screen" onClick={() => go(index - 1)}>
+              <Arrow direction="left" />
+            </Control>
+            <Control label="Next screen" onClick={() => go(index + 1)}>
+              <Arrow direction="right" />
+            </Control>
+            <Control label={playing ? "Pause slides" : "Play slides"} pressed={playing} onClick={() => setPlaying((value) => !value)}>
+              {playing ? <PauseIcon /> : <PlayIcon />}
+            </Control>
+          </div>
+        </div>
+        ) : (
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <Eyebrow>{eyebrow}</Eyebrow>
@@ -95,8 +117,9 @@ export function ScreenSlider({
             </Control>
           </div>
         </div>
+        )}
 
-        <div className="mt-8 overflow-hidden rounded-[28px] border border-ink/10 bg-forest shadow-[0_30px_60px_-36px_rgba(18,60,53,0.65)]">
+        <div className={`${embedded ? "" : "mt-8"} overflow-hidden rounded-[28px] border border-ink/10 bg-forest shadow-[0_30px_60px_-36px_rgba(18,60,53,0.65)]`}>
           <div className="h-1 bg-white/15">
             <div
               key={`${current.id}-${running ? "run" : "still"}`}
@@ -131,7 +154,7 @@ export function ScreenSlider({
                   aria-label={`${slideIndex + 1} of ${count}`}
                   aria-hidden={slideIndex !== index}
                 >
-                  <div className="relative h-[62vw] max-h-[680px] min-h-[240px] bg-[#101816]">
+                  <div className={`relative bg-[#101816] ${embedded ? "h-[46vw] max-h-[340px] min-h-[190px]" : "h-[62vw] max-h-[680px] min-h-[240px]"}`}>
                     <Image
                       src={slide.src}
                       alt={slideIndex === index ? slide.alt : ""}
@@ -177,7 +200,7 @@ export function ScreenSlider({
             })}
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

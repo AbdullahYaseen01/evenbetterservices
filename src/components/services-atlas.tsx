@@ -137,6 +137,9 @@ function ServiceTile({ slug, dark = false }: { slug: string; dark?: boolean }) {
         <ServiceIcon slug={service.slug} className="h-6 w-6" />
       </span>
       <h3 className={`mt-4 text-xl font-semibold ${dark ? "text-ivory" : "text-forest"}`}>{service.name}</h3>
+      {service.price ? (
+        <p className={`mt-1 font-display text-2xl italic ${dark ? "text-lime" : "text-emerald"}`}>{service.price.amount}</p>
+      ) : null}
       <p className={`mt-2 text-sm leading-6 ${dark ? "text-ivory/75" : "text-ink/75"}`}>{service.summary}</p>
       <span className="mt-4 flex flex-wrap gap-2">
         {service.cardPoints.map((point) => (

@@ -25,6 +25,7 @@ export type Service = {
   useCases: { title: string; detail: string }[];
   delivery: { title: string; detail: string }[];
   faqs: { question: string; answer: string }[];
+  price?: { amount: string; label: string };
 };
 
 export const groups: Record<
@@ -688,7 +689,13 @@ export const services: Service[] = [
           "We test the agreed devices and help you through the store steps included in the project.",
       },
     ],
+    price: { amount: "£99", label: "Android & iOS app" },
     faqs: [
+      {
+        question: "What does the app cost?",
+        answer:
+          "An Android and iOS app is £99. Store accounts stay yours, and work beyond the agreed app journey is scoped separately.",
+      },
       {
         question: "Do you build both Android and iOS?",
         answer:

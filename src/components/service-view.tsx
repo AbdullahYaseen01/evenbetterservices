@@ -28,7 +28,13 @@ export function ServiceView({ service }: { service: Service }) {
             >
               <ServiceIcon slug={service.slug} className="h-7 w-7" />
             </span>
-            <p className="mt-5 text-sm leading-6 text-ink/75">
+            {service.price ? (
+              <p className="mt-5 flex items-end gap-2">
+                <span className="font-display text-5xl leading-none text-forest italic">{service.price.amount}</span>
+                <span className="pb-1 text-xs font-semibold tracking-wide text-emerald uppercase">{service.price.label}</span>
+              </p>
+            ) : null}
+            <p className={`${service.price ? "mt-4" : "mt-5"} text-sm leading-6 text-ink/75`}>
               The capabilities on this page describe work a project can include. Scope is confirmed before anything is built.
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">

@@ -83,7 +83,7 @@ export const faqs = [
   {
     question: "How are project scope, cost, and timelines determined?",
     answer:
-      "From the problem, the people involved, the systems to connect, and the level of finish required. After an initial conversation we propose a scope, milestones, and a commercial outline. Cost and timing are agreed for that scope. There is no fixed public price list.",
+      "An Android and iOS app is £99. Other work is priced from the problem, the people involved, the systems to connect, and the level of finish required. After an initial conversation we propose a scope, milestones, and a commercial outline for that work.",
   },
   {
     question: "What information do you need to start?",

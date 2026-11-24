@@ -3,7 +3,6 @@ import { ButtonLink, Container, Eyebrow } from "@/components/brand";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { ScreenSlider } from "@/components/screen-slider";
 import { FaqList } from "@/components/faq-list";
-import { HeroScene } from "@/components/hero-scene";
 import { ProcessPath } from "@/components/process-path";
 import { ServicesAtlas } from "@/components/services-atlas";
 import { SolutionsLab } from "@/components/solutions-lab";
@@ -18,7 +17,7 @@ export default function HomePage() {
   return (
     <>
       <section className="hero-photo">
-        <Container className="grid items-center gap-12 py-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.95fr)] lg:py-20">
+        <Container className="grid items-start gap-10 py-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:py-16">
           <div>
             <p className="rise text-[0.78rem] font-semibold tracking-[0.16em] text-emerald uppercase">{brand.eyebrow}</p>
             <h1 className="display rise d1 mt-5 text-[clamp(3.15rem,6.2vw,5.7rem)] text-forest">
@@ -27,15 +26,19 @@ export default function HomePage() {
               <span className="block">Grow with confidence.</span>
             </h1>
             <p className="rise d2 mt-6 max-w-xl text-lg leading-8 text-ink/80">{brand.description}</p>
-            <div className="rise d3 mt-8 flex flex-col gap-3 sm:flex-row">
+            <p className="rise d3 mt-6 flex items-end gap-3">
+              <span className="font-display text-6xl leading-none text-forest italic">£99</span>
+              <span className="pb-1 text-sm font-semibold tracking-wide text-forest uppercase">Android & iOS app</span>
+            </p>
+            <div className="rise d4 mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/contact">Discuss Your Project</ButtonLink>
               <ButtonLink href="/#services" variant="secondary">
                 Explore Our Services
               </ButtonLink>
             </div>
-            <p className="rise d4 mt-5 text-sm text-ink/60">From your first idea to launch and ongoing improvement.</p>
+            <p className="rise d5 mt-5 text-sm text-ink/60">From your first idea to launch and ongoing improvement.</p>
           </div>
-          <HeroScene />
+          <ScreenSlider embedded id="hero-work" eyebrow="Previous builds" />
         </Container>
       </section>
 
