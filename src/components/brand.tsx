@@ -61,6 +61,7 @@ const buttonStyles = {
     "border border-forest/15 bg-transparent text-forest hover:border-forest/40 hover:bg-white",
   dark: "border border-ivory/25 bg-transparent text-ivory hover:border-ivory/60 hover:bg-white/10",
   forest: "bg-forest text-lime hover:bg-forest-deep",
+  ember: "bg-ember text-cocoa hover:bg-[#ff8f3d]",
 } as const;
 
 export function ButtonLink({
@@ -90,15 +91,17 @@ export function ButtonLink({
 export function Eyebrow({
   children,
   light = false,
+  warm = false,
 }: {
   children: ReactNode;
   light?: boolean;
+  warm?: boolean;
 }) {
   return (
     <p
-      className={`inline-flex items-center gap-2 text-[0.78rem] font-semibold tracking-[0.16em] uppercase ${light ? "text-lime" : "text-emerald"}`}
+      className={`inline-flex items-center gap-2 text-[0.78rem] font-semibold tracking-[0.16em] uppercase ${warm ? "text-cream" : light ? "text-lime" : "text-emerald"}`}
     >
-      <span className="h-1.5 w-1.5 rounded-full bg-lime" aria-hidden="true" />
+      <span className={`h-1.5 w-1.5 rounded-full ${warm ? "bg-ember" : "bg-lime"}`} aria-hidden="true" />
       {children}
     </p>
   );

@@ -41,19 +41,19 @@ export function FaqList({
                 <button
                   id={buttonId}
                   type="button"
-                  className={`flex min-h-16 w-full items-center justify-between gap-4 py-4 text-left text-lg font-semibold ${tone === "dark" ? "text-ivory" : "text-forest"}`}
+                  className={`flex min-h-16 w-full items-center justify-between gap-4 py-4 text-left text-lg font-semibold ${tone === "dark" ? "text-cream" : "text-forest"}`}
                   aria-expanded={expanded}
                   aria-controls={panelId}
                   onClick={() => setOpen(expanded ? -1 : index)}
                 >
                   {faq.question}
-                  <span aria-hidden="true" className={`font-display text-2xl italic ${tone === "dark" ? "text-lime" : "text-emerald"}`}>
+                  <span aria-hidden="true" className={`font-display text-2xl italic ${tone === "dark" ? "text-ember" : "text-emerald"}`}>
                     {expanded ? "–" : "+"}
                   </span>
                 </button>
               </h3>
               <div id={panelId} role="region" aria-labelledby={buttonId} hidden={!expanded}>
-                <p className={`max-w-3xl pb-5 text-base leading-7 ${tone === "dark" ? "text-ivory/75" : "text-ink/75"}`}>{faq.answer}</p>
+                <p className={`max-w-3xl pb-5 text-base leading-7 ${tone === "dark" ? "text-cream/75" : "text-ink/75"}`}>{faq.answer}</p>
               </div>
             </div>
           );
